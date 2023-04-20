@@ -13,7 +13,19 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+/*
 
+How about no auth for now?
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+*/
+
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\BookingController;
+
+Route::get('/products', [ProductController::class, 'index']);
+
+Route::get('/bookings', [BookingController::class, 'index']);
+Route::post('/bookings', [BookingController::class, 'store']);

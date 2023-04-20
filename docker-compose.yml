@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres:14
+    environment:
+      POSTGRES_USER: heythere
+      POSTGRES_PASSWORD: withluv
+      POSTGRES_DB: challenge
+    volumes:
+      - ./devdb-data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
